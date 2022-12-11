@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getPosts } from "../src/services/posts.jsx";
+import { getPosts } from "../services/posts.jsx";
 
 export function PostList() {
   const [posts, setPosts] = useState([]);
@@ -7,8 +7,8 @@ export function PostList() {
     getPosts().then(setPosts);
   }, []);
   return (
-    <h1 key={post.id}>
-      <a href={`/posts/${post.id}`}>{post.title}</a>
+    <h1 key={posts.id}>
+      <a href={`/posts/${posts.id}`}>{posts.title}</a>
     </h1>
   );
 
